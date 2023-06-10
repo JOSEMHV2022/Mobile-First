@@ -56,6 +56,9 @@
     color: var(--cor-tercearia);
     font-weight: 700;
 }
+a.lista_menu_link{
+    color: var(--cor-degrade);
+}
 
 .lista_menu_titulo,
 .lista_menu_item {
