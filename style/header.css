@@ -1,0 +1,209 @@
+.header__menu {
+    display: flex;
+    height: 80px;
+    width: 100vw;
+    justify-content: space-between;
+    background-color: var(--cor-secundaria);
+    position: relative;
+}
+.cabecalho_menu-hamburguer{
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    background-image: url(../assets/Menu.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+.container {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.lista-menu , .lista_menu {
+    display: none;
+}
+
+.container_botao {
+    display: none;
+}
+
+
+.container_botao:checked ~ .container_rotulo >.cabecalho_menu-hamburguer {
+    background-image: url("../assets/MenuAberto.svg");
+}
+.container_rotulo{
+    width: 80px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container_botao:checked ~ .container_rotulo{
+    background: var(--cor-degrade);
+}
+.container_botao:checked ~ .lista_menu{
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    z-index: 2;
+}
+.lista_menu_titulo {
+    color: var(--cor-tercearia);
+    font-weight: 700;
+}
+
+.lista_menu_titulo,
+.lista_menu_item {
+    padding: 1em;
+    background-color: var(--cor-secundaria);
+}
+
+.lista_menu_link {
+    background: var(--cor-degrade);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: var(--cor-degrade);
+    background-clip: text;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.lista_menu_link:active {
+    background: var(--cor-degrade);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: white;
+    background-clip: text;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.container__titulo {
+    display: none;
+}
+
+
+
+.opcoes {
+    display: none;
+}
+
+
+.container__texto{
+    display: none;
+}
+
+@media screen and (min-width: 1024px) {
+    .header__menu{
+        display: flex;
+        justify-content: space-around;
+        width: 100vw;
+    }
+    .container__titulo,
+    .container__titulo--negrito {
+        font-family: var(--font-secundaria);
+    }
+    .container__titulo {
+        display: block;
+        font-size: 30px;
+        font-weight: 400;
+        top: 100%;
+    }
+
+    .container__titulo--negrito {
+        font-weight: 700;
+    }
+    .opcoes__botao {
+        display: none;
+    }
+    .container_rotulo{
+        display: none;
+    }
+
+    .opcoes__botao:checked ~ .lista-menu {
+        display:inline-block;
+        position: absolute;
+        top: 100%;
+        left: 0%;
+        width: 15vw;
+    }
+    .opcoes__botao:checked ~ .categoria{
+        background: var(--cor-degrade);
+        height: 100%;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        color: var(--cor-secundaria);
+    }
+    ul.opcoes {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: relative;
+        width:fit-content;
+    }
+    li.opcoes__item{
+        white-space: nowrap;
+        cursor: pointer;
+        width: 15vw;
+        text-align: center;
+    }
+    .opcoes__link {
+        cursor: pointer;
+        padding: 0 1em;
+        text-transform: uppercase;
+        text-decoration: none;
+        flex: 1;
+        font-family: var(--font-secundaria);
+        color: black;
+    }
+    .lista-menu>li.lista_menu_item:hover{
+        background: var(--cor-degrade);
+        -webkit-text-fill-color: white;
+        background-clip: text;
+        text-decoration: none;
+        text-transform: uppercase;
+        }
+    .conteudo_a{
+        z-index: 3;
+    }
+    
+    .imagem__transparente {
+        display: none;
+    }
+
+    .cabecalho_menu-hamburguer {
+        display: none;
+    }
+    
+}
+
+@media screen and (min-width: 1728px) {
+    .container__link {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: black;
+    }
+    
+    .container__texto{
+        display: block;
+    }
+    .cabecalho {
+        padding: 0 2em;
+    }
+
+    .opcoes{
+        margin-right: auto ;
+        margin-left: 5%;
+    }
+    li.opcoes__item{
+        white-space: nowrap;
+        cursor: pointer;
+        width: fit-content;
+        padding: 20px 60px;
+        text-align: center;
+    }
+}
